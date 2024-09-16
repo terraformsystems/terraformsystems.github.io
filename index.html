@@ -2,12 +2,21 @@
 <html>
 
 <head>
+  <!-- Load the script.js file and execute it after the page has finished loading -->
+  <script src="script.js" defer></script>
+  <!-- Set the title of the page -->
   <title>TerraForm Systems</title>
+  <!-- Set the character encoding of the page -->
   <meta charset="UTF-8">
+  <!-- Set the viewport of the page -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Load the W3.CSS stylesheet -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Load the Raleway font from Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <!-- Load the Font Awesome stylesheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Set the default font family for the page -->
   <style>
     body,
     h1,
@@ -16,24 +25,33 @@
     h4,
     h5,
     h6 {
+      font-family: "Raleway", sans-serif /* Set the font family to Raleway */
       font-family: "Raleway", sans-serif
     }
 
     body,
     html {
+      height: 100%; /* Set the page to full height */
+      line-height: 1.8; /* Set the line height to 1.8 */
       height: 100%;
       line-height: 1.8;
     }
 
+    /* Set the background image to a full height image */
     /* Full height image header */
     .bgimg-1 {
+      background-position: center; /* Center the background image */
+      background-size: cover; /* Make the background image cover the entire page */
+      background-image: -moz-element(url("https://www.w3schools.com/w3images/mac.jpg")); /* Set the background image to the mac.jpg image */
       background-position: center;
       background-size: cover;
       background-image: -moz-element(url("https://www.w3schools.com/w3images/mac.jpg"));
       background-image: url("https://www.w3schools.com/w3images/mac.jpg");
+      min-height: 100%; /* Set the minimum height of the background image to 100% */
       min-height: 100%;
     }
 
+    /* Set the padding of the W3.CSS buttons */
     .w3-bar .w3-button {
       padding: 16px;
     }
@@ -41,9 +59,13 @@
 </head>
 
 <body>
-
+  <div id="cookie-banner">
+    <p>This website uses cookies to improve your experience. By continuing to use this site, you agree to our <a href="/cookie-policy">cookie policy</a>.</p>
+    <button id="accept-cookies">Accept Cookies</button>
+    <button id="decline-cookies">Decline Cookies</button>
+  </div>
   <!-- Navbar (sit on top) -->
-  <div class="w3-top">
+  <div style="bottom: 'cookie-banner'; top: 64px;">
     <div class="w3-bar w3-white w3-card" id="myNavbar">
       <a href="#home" class="w3-bar-item w3-button w3-wide">TerraForm Systems</a>
       <!-- Right-sided navbar links -->
@@ -62,7 +84,7 @@
       </a>
     </div>
   </div>
-
+  
   <!-- Sidebar on small screens when clicking the menu icon -->
   <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
     style="display:none" id="mySidebar">
@@ -73,9 +95,10 @@
     <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
   </nav>
-
+  
   <!-- Header with full-height image -->
   <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    
     <div class="w3-display-left w3-text-white" style="padding:48px">
       <h1 class="w3-hide-small" style="font-weight: bolder;">Grow Your Business with Us
       </h1>
@@ -86,8 +109,9 @@
           style="border-radius: 10px;"><b>Learn More
             and Get Started Today</b></a></p>
     </div>
+    
     <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <a href="https://www.facebook.com/yourpage"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
       <i class="fa fa-instagram w3-hover-opacity"></i>
       <i class="fa fa-snapchat w3-hover-opacity"></i>
       <i class="fa fa-pinterest-p w3-hover-opacity"></i>
@@ -390,34 +414,7 @@
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
         class="w3-hover-text-green">w3.css</a></p>
   </footer>
-
-  <script>
-    // Modal Image Gallery
-    function onClick(element) {
-      document.getElementById("img01").src = element.src;
-      document.getElementById("modal01").style.display = "block";
-      var captionText = document.getElementById("caption");
-      captionText.innerHTML = element.alt;
-    }
-
-
-    // Toggle between showing and hiding the sidebar when clicking the menu icon
-    var mySidebar = document.getElementById("mySidebar");
-
-    function w3_open() {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-      } else {
-        mySidebar.style.display = 'block';
-      }
-    }
-
-    // Close the sidebar with the close button
-    function w3_close() {
-      mySidebar.style.display = "none";
-    }
-  </script>
-
+  
 </body>
 
 </html>
