@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - TerraForm Systems</title>
+  <meta name="description" content="Get in touch with TerraForm Systems for all your technology solution needs.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-icon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+          },
+        },
+      },
+    }
+  </script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+      border-color: #3b82f6;
+    }
+    .contact-card {
+      transition: all 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .map-container {
+      height: 100%;
+      min-height: 300px;
+    }
+    @media (min-width: 1024px) {
+      .map-container {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-white">
+  <!-- Skip to main content -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:px-4 focus:py-2 focus:bg-white focus:ring-2 focus:ring-blue-600 focus:rounded top-4 left-4 z-50">
+    Skip to main content
+  </a>
+
+  <!-- Navigation -->
+  <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-40">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <div class="flex items-center">
+          <a href="/" class="flex-shrink-0 flex items-center">
+            <img class="h-8 w-auto" src="/assets/logo-icon.svg" alt="TerraForm Systems">
+            <span class="ml-2 text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">TerraForm</span>
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="/" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200">Home</a>
+          <a href="/pages/solutions.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200">Solutions</a>
+          <a href="/pages/about.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200">About</a>
+          <a href="/pages/contact.html" class="px-4 py-2 text-sm font-medium text-blue-600 transition-colors duration-200">Contact</a>
+          <a href="/pages/contact.html" class="ml-4 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+            Get Started
+          </a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg rounded-lg mt-2 py-2">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Home</a>
+          <a href="/pages/solutions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Solutions</a>
+          <a href="/pages/about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">About</a>
+          <a href="/pages/contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-gray-50">Contact</a>
+          <div class="pt-1">
+            <a href="/pages/contact.html" class="block w-full px-4 py-2.5 text-center text-white bg-blue-600 rounded-md hover:bg-blue-700 text-base font-medium">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-24 pb-16">
+    <!-- Page Header -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          Get in Touch
+        </h1>
+        <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-600">
+          We'd love to hear from you. Reach out to our team for any questions or inquiries.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Form & Info -->
+    <div class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Contact Form -->
+            <div class="px-6 py-12 sm:px-10">
+              <h2 class="text-2xl font-bold text-gray-900 mb-8">Send us a message</h2>
+              
+              <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
+                  <div>
+                    <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
+                    <div class="mt-1">
+                      <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="py-3 px-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
+                    <div class="mt-1">
+                      <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="py-3 px-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                  <div class="mt-1">
+                    <input id="email" name="email" type="email" autocomplete="email" class="py-3 px-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                  <div class="mt-1">
+                    <input type="text" name="phone" id="phone" autocomplete="tel" class="py-3 px-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                  <div class="mt-1">
+                    <select id="subject" name="subject" class="py-3 px-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                      <option>General Inquiry</option>
+                      <option>Sales</option>
+                      <option>Support</option>
+                      <option>Partnership</option>
+                      <option>Careers</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                  <div class="mt-1">
+                    <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input id="privacy-policy" name="privacy-policy" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                  </div>
+                  <div class="ml-3 text-sm">
+                    <label for="privacy-policy" class="font-medium text-gray-700">I agree to the <a href="#" class="text-blue-600 hover:text-blue-500">Privacy Policy</a> and <a href="#" class="text-blue-600 hover:text-blue-500">Terms of Service</a></label>
+                  </div>
+                </div>
+
+                <div>
+                  <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="bg-gray-50 px-6 py-12 sm:px-10 lg:py-16">
+              <h2 class="text-2xl font-bold text-gray-900 mb-8">Contact Information</h2>
+              
+              <div class="space-y-8">
+                <!-- Address -->
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                      <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-medium text-gray-900">Visit Us</h3>
+                    <p class="mt-1 text-gray-600">123 Tech Park Drive<br>San Francisco, CA 94107</p>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600">
+                      <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-medium text-gray-900">Email Us</h3>
+                    <p class="mt-1 text-gray-600">
+                      <a href="mailto:info@terraformsystems.com" class="text-blue-600 hover:text-blue-500">info@terraformsystems.com</a><br>
+                      <a href="mailto:support@terraformsystems.com" class="text-blue-600 hover:text-blue-500">support@terraformsystems.com</a>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-100 text-purple-600">
+                      <i class="fas fa-phone-alt text-xl"></i>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-medium text-gray-900">Call Us</h3>
+                    <p class="mt-1 text-gray-600">
+                      <a href="tel:+18005551234" class="text-blue-600 hover:text-blue-500">+1 (800) 555-1234</a><br>
+                      <span class="text-sm text-gray-500">Mon-Fri, 9am-6pm PST</span>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-100 text-gray-600">
+                      <i class="fas fa-hashtag text-xl"></i>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="text-lg font-medium text-gray-900">Follow Us</h3>
+                    <div class="flex space-x-4 mt-2">
+                      <a href="#" class="text-gray-500 hover:text-blue-600">
+                        <span class="sr-only">Twitter</span>
+                        <i class="fab fa-twitter text-2xl"></i>
+                      </a>
+                      <a href="#" class="text-gray-500 hover:text-blue-800">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                      </a>
+                      <a href="#" class="text-gray-500 hover:text-gray-800">
+                        <span class="sr-only">GitHub</span>
+                        <i class="fab fa-github text-2xl"></i>
+                      </a>
+                      <a href="#" class="text-gray-500 hover:text-pink-600">
+                        <span class="sr-only">Instagram</span>
+                        <i class="fab fa-instagram text-2xl"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Map -->
+              <div class="mt-12 rounded-lg overflow-hidden shadow-md">
+                <div class="aspect-w-16 aspect-h-9">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.84112332866!2d-122.3998656846824!3d37.78688297975787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807f8f5af857%3A0xe0a3b838dbc0a8b1!2sSan%20Francisco%20Tech%20Park!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="w-full h-full"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
+            Can't find what you're looking for? <a href="#" class="text-blue-600 hover:text-blue-500">Contact our support team</a>.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <dl class="space-y-6 divide-y divide-gray-200">
+            <!-- FAQ Item 1 -->
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button type="button" class="text-left w-full flex justify-between items-start text-gray-700" aria-controls="faq-1" aria-expanded="false">
+                  <span class="font-medium text-gray-900">What services does TerraForm Systems offer?</span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" id="faq-1">
+                <p class="text-base text-gray-600">
+                  TerraForm Systems offers a comprehensive suite of technology solutions including cloud computing, AI & automation, cybersecurity, data analytics, custom software development, and IT consulting services. Our solutions are tailored to meet the unique needs of businesses across various industries.
+                </p>
+              </dd>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button type="button" class="text-left w-full flex justify-between items-start text-gray-700" aria-controls="faq-2" aria-expanded="false">
+                  <span class="font-medium text-gray-900">How can I request a consultation?</span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" id="faq-2">
+                <p class="text-base text-gray-600">
+                  You can request a consultation by filling out the contact form on this page, calling our sales team at <a href="tel:+18005551234" class="text-blue-600 hover:text-blue-500">+1 (800) 555-1234</a>, or emailing us at <a href="mailto:sales@terraformsystems.com" class="text-blue-600 hover:text-blue-500">sales@terraformsystems.com</a>. Our team will get back to you within 24 hours to schedule a consultation at your convenience.
+                </p>
+              </dd>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button type="button" class="text-left w-full flex justify-between items-start text-gray-700" aria-controls="faq-3" aria-expanded="false">
+                  <span class="font-medium text-gray-900">What industries do you serve?</span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" id="faq-3">
+                <p class="text-base text-gray-600">
+                  We serve a wide range of industries including but not limited to:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                  <li>Technology & Software</li>
+                  <li>Healthcare & Life Sciences</li>
+                  <li>Financial Services & FinTech</li>
+                  <li>Retail & E-commerce</li>
+                  <li>Manufacturing & Logistics</li>
+                  <li>Education & E-learning</li>
+                  <li>Media & Entertainment</li>
+                  <li>Government & Public Sector</li>
+                </ul>
+              </dd>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button type="button" class="text-left w-full flex justify-between items-start text-gray-700" aria-controls="faq-4" aria-expanded="false">
+                  <span class="font-medium text-gray-900">Do you offer support after implementation?</span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" id="faq-4">
+                <p class="text-base text-gray-600">
+                  Yes, we provide comprehensive post-implementation support to ensure your systems continue to run smoothly. Our support plans include 24/7 monitoring, regular maintenance, software updates, and access to our technical support team. We offer various support tiers to match your specific needs and budget.
+                </p>
+              </dd>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="pt-6">
+              <dt class="text-lg">
+                <button type="button" class="text-left w-full flex justify-between items-start text-gray-700" aria-controls="faq-5" aria-expanded="false">
+                  <span class="font-medium text-gray-900">How do you ensure data security and compliance?</span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" id="faq-5">
+                <p class="text-base text-gray-600">
+                  Data security and compliance are our top priorities. We implement industry-leading security measures including:
+                </p>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                  <li>End-to-end encryption for data in transit and at rest</li>
+                  <li>Regular security audits and penetration testing</li>
+                  <li>Compliance with GDPR, HIPAA, SOC 2, and other relevant regulations</li>
+                  <li>Role-based access controls and multi-factor authentication</li>
+                  <li>Regular staff training on security best practices</li>
+                </ul>
+                <p class="mt-2 text-base text-gray-600">
+                  We're happy to discuss specific compliance requirements for your industry.
+                </p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-blue-700">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+          Ready to get started?
+        </h2>
+        <p class="mt-4 text-xl text-blue-100 max-w-2xl mx-auto">
+          Our team is here to help you transform your business with technology.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#contact-form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10 transition-colors duration-200">
+            Contact Sales
+          </a>
+          <a href="tel:+18005551234" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 bg-opacity-60 hover:bg-opacity-70 md:py-4 md:text-lg md:px-10 transition-colors duration-200">
+            Call Us Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+          <ul class="mt-4 space-y-4">
+            <li><a href="/pages/about.html" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Careers</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Blog</a></li>
+            <li><a href="/pages/contact.html" class="text-base text-gray-300 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Solutions</h3>
+          <ul class="mt-4 space-y-4">
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">Cloud Solutions</a></li>
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">AI & Automation</a></li>
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">Security Services</a></li>
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">Data Analytics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+          <ul class="mt-4 space-y-4">
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Help Center</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Documentation</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">API Status</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">System Status</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Subscribe to our newsletter</h3>
+          <p class="mt-4 text-base text-gray-300">The latest news, articles, and resources, sent to your inbox weekly.</p>
+          <form class="mt-4 sm:flex">
+            <label for="email-address" class="sr-only">Email address</label>
+            <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white sm:max-w-xs rounded-md" placeholder="Enter your email">
+            <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+              <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-gray-800 pt-8">
+        <p class="text-base text-gray-400 text-center">&copy; 2023 TerraForm Systems. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // FAQ accordion
+    document.querySelectorAll('button[aria-controls^="faq-"]').forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('aria-controls');
+        const target = document.getElementById(targetId);
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle the expanded state
+        this.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle the visibility of the answer
+        if (isExpanded) {
+          target.classList.add('hidden');
+          this.querySelector('svg').classList.remove('rotate-45');
+        } else {
+          target.classList.remove('hidden');
+          this.querySelector('svg').classList.add('rotate-45');
+        }
+      });
+    });
+    
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
+        
+        // Here you would typically send the form data to a server
+        console.log('Form submitted:', formObject);
+        
+        // Show success message
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+      });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100, // Adjust for fixed header
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

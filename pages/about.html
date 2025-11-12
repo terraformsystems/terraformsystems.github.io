@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - TerraForm Systems</title>
+  <meta name="description" content="Learn about TerraForm Systems and our mission to transform businesses through technology.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-icon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+          },
+        },
+      },
+    }
+  </script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    .timeline-item {
+      position: relative;
+      padding-left: 3rem;
+      padding-bottom: 3rem;
+      border-left: 2px solid #e5e7eb;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-left: 2px solid transparent;
+    }
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: -0.5rem;
+      top: 0;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: #3b82f6;
+    }
+    .team-member:hover {
+      transform: translateY(-0.5rem);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-white">
+  <!-- Skip to main content -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:px-4 focus:py-2 focus:bg-white focus:ring-2 focus:ring-blue-600 focus:rounded top-4 left-4 z-50">
+    Skip to main content
+  </a>
+
+  <!-- Navigation -->
+  <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-40">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <div class="flex items-center">
+          <a href="/" class="flex-shrink-0 flex items-center">
+            <img class="h-8 w-auto" src="/assets/logo-icon.svg" alt="TerraForm Systems">
+            <span class="ml-2 text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">TerraForm</span>
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="/" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200">Home</a>
+          <a href="/pages/solutions.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200">Solutions</a>
+          <a href="/pages/about.html" class="px-4 py-2 text-sm font-medium text-blue-600 transition-colors duration-200">About</a>
+          <a href="/pages/contact.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200">Contact</a>
+          <a href="/pages/contact.html" class="ml-4 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+            Get Started
+          </a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg rounded-lg mt-2 py-2">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Home</a>
+          <a href="/pages/solutions.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Solutions</a>
+          <a href="/pages/about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-gray-50">About</a>
+          <a href="/pages/contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Contact</a>
+          <div class="pt-1">
+            <a href="/pages/contact.html" class="block w-full px-4 py-2.5 text-center text-white bg-blue-600 rounded-md hover:bg-blue-700 text-base font-medium">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-24 pb-16">
+    <!-- Hero Section -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            About TerraForm Systems
+          </h1>
+          <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-600">
+            Empowering businesses through innovative technology solutions since 2015.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Story -->
+    <div class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="mb-12 lg:mb-0">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Our Story
+            </h2>
+            <div class="mt-6 text-gray-600 space-y-6">
+              <p>
+                Founded in 2015, TerraForm Systems began as a small team of passionate technologists with a vision to transform how businesses leverage technology. What started as a modest startup has grown into a leading technology solutions provider, serving clients across multiple industries.
+              </p>
+              <p>
+                Our journey has been marked by continuous innovation, a commitment to excellence, and an unwavering focus on delivering real value to our clients. We believe that technology should be an enabler, not a barrier, to business success.
+              </p>
+              <p>
+                Today, we're proud to have a team of over 200 professionals working together to create cutting-edge solutions that help businesses thrive in the digital age.
+              </p>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden shadow-xl">
+            <div class="aspect-w-16 aspect-h-9">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1522071820081-009c012b4a2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Our team working together">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission & Values -->
+    <div class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Our Mission & Values
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
+            Guiding principles that define who we are and how we work
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Value 1 -->
+          <div class="bg-gray-50 p-8 rounded-xl text-center">
+            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mx-auto mb-4">
+              <i class="fas fa-bullseye text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Our Mission</h3>
+            <p class="text-gray-600">To empower businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage.</p>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="bg-gray-50 p-8 rounded-xl text-center">
+            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-green-100 text-green-600 mx-auto mb-4">
+              <i class="fas fa-users text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Customer Focus</h3>
+            <p class="text-gray-600">We put our clients at the center of everything we do, delivering tailored solutions that address their unique challenges.</p>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="bg-gray-50 p-8 rounded-xl text-center">
+            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-100 text-purple-600 mx-auto mb-4">
+              <i class="fas fa-lightbulb text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Innovation</h3>
+            <p class="text-gray-600">We embrace change and continuously explore new technologies and approaches to stay ahead of the curve.</p>
+          </div>
+
+          <!-- Value 4 -->
+          <div class="bg-gray-50 p-8 rounded-xl text-center">
+            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100 text-yellow-600 mx-auto mb-4">
+              <i class="fas fa-handshake text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Integrity</h3>
+            <p class="text-gray-600">We conduct our business with honesty, transparency, and the highest ethical standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Team -->
+    <div class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Meet Our Leadership Team
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
+            The brilliant minds behind our success
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Team Member 1 -->
+          <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+            <img class="w-full h-64 object-cover" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900">Sarah Johnson</h3>
+              <p class="text-blue-600 font-medium">CEO & Founder</p>
+              <p class="mt-2 text-gray-600">Visionary leader with 15+ years of experience in technology and business strategy.</p>
+              <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-gray-500 hover:text-blue-600">
+                  <span class="sr-only">LinkedIn</span>
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-blue-400">
+                  <span class="sr-only">Twitter</span>
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+            <img class="w-full h-64 object-cover" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900">Michael Chen</h3>
+              <p class="text-blue-600 font-medium">CTO</p>
+              <p class="mt-2 text-gray-600">Technology expert with a passion for building scalable and secure systems.</p>
+              <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-gray-500 hover:text-blue-600">
+                  <span class="sr-only">LinkedIn</span>
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-blue-400">
+                  <span class="sr-only">GitHub</span>
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+            <img class="w-full h-64 object-cover" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900">Emily Rodriguez</h3>
+              <p class="text-blue-600 font-medium">VP of Product</p>
+              <p class="mt-2 text-gray-600">Product strategist focused on delivering exceptional user experiences.</p>
+              <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-gray-500 hover:text-blue-600">
+                  <span class="sr-only">LinkedIn</span>
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-blue-400">
+                  <span class="sr-only">Twitter</span>
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+            <img class="w-full h-64 object-cover" src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Kim">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900">David Kim</h3>
+              <p class="text-blue-600 font-medium">VP of Engineering</p>
+              <p class="mt-2 text-gray-600">Engineering leader with expertise in building high-performing teams and systems.</p>
+              <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-gray-500 hover:text-blue-600">
+                  <span class="sr-only">LinkedIn</span>
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-blue-400">
+                  <span class="sr-only">GitHub</span>
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Journey -->
+    <div class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Our Journey
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
+            Milestones in our growth and success
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Vertical line -->
+          <div class="absolute left-1/2 w-0.5 h-full bg-gray-200 -translate-x-1/2"></div>
+          
+          <!-- Timeline items -->
+          <div class="space-y-12">
+            <!-- Timeline Item 1 -->
+            <div class="relative">
+              <div class="md:flex justify-center">
+                <div class="md:w-1/2 md:pr-12 md:text-right">
+                  <h3 class="text-xl font-bold text-gray-900">Company Founded</h3>
+                  <p class="text-blue-600 font-medium">2015</p>
+                  <p class="mt-2 text-gray-600">TerraForm Systems was founded with a vision to transform businesses through technology.</p>
+                </div>
+                <div class="hidden md:block md:w-1/2"></div>
+              </div>
+              <div class="absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-1/2 md:pr-8 top-0 h-full flex items-center">
+                <div class="h-4 w-4 rounded-full bg-blue-600 ring-8 ring-blue-100"></div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative">
+              <div class="md:flex justify-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12 md:text-right">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                  <h3 class="text-xl font-bold text-gray-900">First Major Client</h3>
+                  <p class="text-blue-600 font-medium">2016</p>
+                  <p class="mt-2 text-gray-600">Secured our first enterprise client, marking the beginning of our growth journey.</p>
+                </div>
+              </div>
+              <div class="absolute left-1/2 -translate-x-1/2 md:left-1/2 md:right-auto md:pl-8 top-0 h-full flex items-center">
+                <div class="h-4 w-4 rounded-full bg-blue-600 ring-8 ring-blue-100"></div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative">
+              <div class="md:flex justify-center">
+                <div class="md:w-1/2 md:pr-12 md:text-right">
+                  <h3 class="text-xl font-bold text-gray-900">Series A Funding</h3>
+                  <p class="text-blue-600 font-medium">2018</p>
+                  <p class="mt-2 text-gray-600">Raised $10M in Series A funding to expand our team and product offerings.</p>
+                </div>
+                <div class="hidden md:block md:w-1/2"></div>
+              </div>
+              <div class="absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-1/2 md:pr-8 top-0 h-full flex items-center">
+                <div class="h-4 w-4 rounded-full bg-blue-600 ring-8 ring-blue-100"></div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="relative">
+              <div class="md:flex justify-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12 md:text-right">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                  <h3 class="text-xl font-bold text-gray-900">Global Expansion</h3>
+                  <p class="text-blue-600 font-medium">2020</p>
+                  <p class="mt-2 text-gray-600">Opened offices in Europe and Asia to better serve our international clients.</p>
+                </div>
+              </div>
+              <div class="absolute left-1/2 -translate-x-1/2 md:left-1/2 md:right-auto md:pl-8 top-0 h-full flex items-center">
+                <div class="h-4 w-4 rounded-full bg-blue-600 ring-8 ring-blue-100"></div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 5 -->
+            <div class="relative">
+              <div class="md:flex justify-center">
+                <div class="md:w-1/2 md:pr-12 md:text-right">
+                  <h3 class="text-xl font-bold text-gray-900">Today</h3>
+                  <p class="text-blue-600 font-medium">2023</p>
+                  <p class="mt-2 text-gray-600">Serving 500+ clients worldwide with a team of 200+ talented professionals.</p>
+                </div>
+                <div class="hidden md:block md:w-1/2"></div>
+              </div>
+              <div class="absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-1/2 md:pr-8 top-0 h-full flex items-center">
+                <div class="h-4 w-4 rounded-full bg-blue-600 ring-8 ring-blue-100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-blue-700">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+          Ready to join our growing list of satisfied clients?
+        </h2>
+        <p class="mt-4 text-xl text-blue-100 max-w-2xl mx-auto">
+          Let's discuss how we can help your business thrive with our technology solutions.
+        </p>
+        <div class="mt-10">
+          <a href="/pages/contact.html" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10 transition-colors duration-200">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+          <ul class="mt-4 space-y-4">
+            <li><a href="/pages/about.html" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Careers</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Blog</a></li>
+            <li><a href="/pages/contact.html" class="text-base text-gray-300 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Solutions</h3>
+          <ul class="mt-4 space-y-4">
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">Cloud Solutions</a></li>
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">AI & Automation</a></li>
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">Security Services</a></li>
+            <li><a href="/pages/solutions.html" class="text-base text-gray-300 hover:text-white">Data Analytics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+          <ul class="mt-4 space-y-4">
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Help Center</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">Documentation</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">API Status</a></li>
+            <li><a href="#" class="text-base text-gray-300 hover:text-white">System Status</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Subscribe to our newsletter</h3>
+          <p class="mt-4 text-base text-gray-300">The latest news, articles, and resources, sent to your inbox weekly.</p>
+          <form class="mt-4 sm:flex">
+            <label for="email-address" class="sr-only">Email address</label>
+            <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white sm:max-w-xs rounded-md" placeholder="Enter your email">
+            <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+              <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-gray-800 pt-8">
+        <p class="text-base text-gray-400 text-center">&copy; 2023 TerraForm Systems. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Adjust for fixed header
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
